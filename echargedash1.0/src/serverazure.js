@@ -594,6 +594,42 @@ heading:"more than 8 accounts",
 amount: usersWithMoreThanEightAccounts},
 ];
 
+const digitalagedata= await sql.query(`
+SELECT 
+    CASE 
+        WHEN [Phone_Name_Attributes.digitalage] < 365 THEN 'less than 365'
+        WHEN [Phone_Name_Attributes.digitalage] BETWEEN 365 AND 800 THEN 'Between 365 and 800'
+        ELSE 'greater than 800'
+    END AS GroupName,
+    COUNT(*) AS Count
+FROM 
+    Risk_score
+GROUP BY 
+    CASE 
+        WHEN [Phone_Name_Attributes.digitalage] < 365 THEN 'less than 365'
+        WHEN [Phone_Name_Attributes.digitalage] BETWEEN 365 AND 800 THEN 'Between 365 and 800'
+        ELSE 'greater than 800'
+    END;
+`);
+
+const namematchdata= await sql.query(`
+SELECT 
+    CASE 
+        WHEN [Phone_Name_Attributes.nameMatchScore] < 33 THEN 'less than 33'
+        WHEN [Phone_Name_Attributes.nameMatchScore] BETWEEN 33 AND 66 THEN 'Between 33 and 66'
+        ELSE 'greater than 66'
+    END AS GroupName,
+    COUNT(*) AS Count
+FROM 
+    Risk_score
+GROUP BY 
+    CASE 
+        WHEN [Phone_Name_Attributes.nameMatchScore] < 33 THEN 'less than 33'
+        WHEN [Phone_Name_Attributes.nameMatchScore] BETWEEN 33 AND 66 THEN 'Between 33 and 66'
+        ELSE 'greater than 66'
+    END;
+`)
+
 
         
         const result=[{
@@ -613,7 +649,9 @@ amount: usersWithMoreThanEightAccounts},
             phonefootprint:phonefootprint.recordset,
             upicount:upicount.recordset,
             phonenamematch:phonenamematch.recordset,
-            acountsfound: acountfounddata
+            acountsfound: acountfounddata.recordset,
+            digitalage: digitalagedata.recordset,
+            namematch: namematchdata.recordset,
         }]
         res.json(result);
         // console.log(result.recordset[0].value_count);
