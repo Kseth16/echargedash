@@ -464,9 +464,16 @@ function Onboarding(){
 <>            
 
 {/* <div className="flex flex-row h-fit gap-4 mt-10 "> */}
+
+
+
 <div className="h-44 mr-5 ml-5 flex justify-center gap-10 mt-5">
 
 {/* <h1>BUSSINESS STUFF</h1> */}
+
+
+
+
 
 <Card className="m-h-56" >
 <p className="absolute top-0 left-1/2 transform -translate-x-1/2 text-center text-tremor-default text-tremor-content dark:text-dark-tremor-content whitespace-nowrap">
@@ -481,6 +488,9 @@ function Onboarding(){
         <h1 className="mt-8 flex justify-center items-center font-bold text-center">{businessarr[0]["totaldrivers"][0][""]}</h1>
         ):(<p className="font-bold text-center">LOADING...</p>)}
 </Card>
+
+
+
 
 
 <Card className="m-h-56	">

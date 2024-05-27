@@ -770,7 +770,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 
 
 
-{/* test */}
+
 
 
 <div className="bg-slate-100 flex flex-col  mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
