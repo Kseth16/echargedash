@@ -329,12 +329,12 @@ setTempholdingarr(findDataByPhoneNumber(mobileNumber));
     />   
 
 
-<div className="bg-slate-100 flex flex-col  mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
+<div className=" flex flex-col  mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
   {/* <p>legend</p> */}
   {/* <p style={{color:"rgb(0, 255, 0)"}}> >4 accounts</p> */}
-  <p style={{color: "rgb(0, 255, 0)"}}>&gt;4 accounts</p>
-  <p style={{color:'rgb(249, 72, 255)'}}> 4 to 8 accounts</p>
-  <p style={{color:'rgb(50, 54, 255)'}}> 8 to 12 accounts</p>
+  <p style={{fontWeight:'bold' ,color: "rgb(0, 255, 0)"}}>&gt;4 accounts</p>
+  <p style={{fontWeight:'bold' ,color:'rgb(249, 72, 255)'}}> 4 to 8 accounts</p>
+  <p style={{fontWeight:'bold' ,color:'rgb(50, 54, 255)'}}> 8 to 12 accounts</p>
   {/* rgb(225, 238, 46) */}
 </div>
 
@@ -455,11 +455,11 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
     /> 
 
 
-<div className="bg-slate-100 flex flex-col  mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
+<div className=" flex flex-col  mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
   {/* <p>legend</p> */}
-  <p style={{color:"rgb(248, 83, 83)"}}>High</p>
-  <p style={{color:'rgb(248, 248, 67)'}}>Medium</p>
-  <p style={{color:'rgb(80, 247, 80)'}}>Low</p>
+  <p style={{fontWeight:'bold' ,color:"rgb(248, 83, 83)"}}>High</p>
+  <p style={{fontWeight:'bold' ,color:'rgb(248, 248, 67)'}}>Medium</p>
+  <p style={{fontWeight:'bold' ,color:'rgb(80, 247, 80)'}}>Low</p>
   {/* rgb(225, 238, 46) */}
 </div>
 
@@ -559,12 +559,12 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
       {...size}
     />   
 
-<div className="bg-slate-100 flex flex-col  mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
+<div className=" flex flex-col  mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
   {/* <p>legend</p> */}
   {/* <p style={{color:"rgb(0, 255, 0)"}}> </p> */}
-  <p style={{color: "rgb(0, 255, 0)"}}>&gt; 365 days</p>
-  <p style={{color:'rgb(249, 72, 255)'}}>365-800 days</p>
-  <p style={{color:'rgb(50, 54, 255)'}}>&lt; 800 days</p>
+  <p style={{fontWeight:'bold' ,color: "rgb(0, 255, 0)"}}>&gt; 365 days</p>
+  <p style={{fontWeight:'bold' ,color:'rgb(249, 72, 255)'}}>365-800 days</p>
+  <p style={{fontWeight:'bold' ,color:'rgb(50, 54, 255)'}}>&lt; 800 days</p>
   {/* rgb(225, 238, 46) */}
 </div>
 
@@ -638,13 +638,13 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
       {...size}
     />  
 
-<div className="bg-slate-100 flex flex-col mt-12" style={{position:'absolute', right:'230px'}}  >
+<div className=" flex flex-col mt-12" style={{position:'absolute', right:'230px'}}  >
 
 {/* <div className="bg-slate-100 flex flex-col  mt-4" style={{position:'absolute', right:'230px', width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >  */}
 
   {/* <p>legend</p> */}
-  <p style={{color: "rgb(126, 255, 126)"}}>prepaid</p>
-  <p style={{color: "rgb(252, 126, 126)"}}>postpaid</p>
+  <p style={{fontWeight:'bold' ,color: "rgb(126, 255, 126)"}}>prepaid</p>
+  <p style={{fontWeight:'bold' ,color: "rgb(252, 126, 126)"}}>postpaid</p>
 </div>
 </div>
 
@@ -697,10 +697,10 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 
 
 
-<div className=" bg-slate-100 flex flex-col mt-12" style={{position:'absolute', right: '0px'}}  >
+<div className="  flex flex-col mt-12" style={{position:'absolute', right: '0px'}}  >
   {/* <p>legend</p> */}
-  <p style={{color: "rgb(126, 255, 126)"}}>Reachable</p>
-  <p style={{color: "rgb(252, 126, 126)"}}>Non Reachable</p>
+  <p style={{fontWeight:'bold' ,color: "rgb(126, 255, 126)"}}>Reachable</p>
+  <p style={{position:"absolute",top:"20px",right:"1px",fontWeight:'bold', whiteSpace:"nowrap" ,color: "rgb(252, 126, 126)"}}>Unreachable</p>
 
 </div>
 
@@ -778,11 +778,11 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 
 
 
-<div className="bg-slate-100 flex flex-col  mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
+<div className=" flex flex-col  mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
   {/* <p>legend</p> */}
-  <p style={{color:"rgb(248, 83, 83)"}}>High</p>
-  <p style={{color:'rgb(248, 248, 67)'}}>Medium</p>
-  <p style={{color:'rgb(80, 247, 80)'}}>Low</p>
+  <p style={{fontWeight:'bold' ,color:"rgb(248, 83, 83)"}}>High</p>
+  <p style={{fontWeight:'bold' ,color:'rgb(248, 248, 67)'}}>Medium</p>
+  <p style={{fontWeight:'bold' ,color:'rgb(80, 247, 80)'}}>Low</p>
   {/* rgb(225, 238, 46) */}
 
 
@@ -822,16 +822,20 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 
   
 <PieChart
+       style={{
+        position: "relative", // Add position property
+        zIndex: "1000000000000000", // Set a higher z-index value
+      }}
 
 
       series={[
         {
           
-          data: businessarr[0]["namematch"].map(item => ({
+          data: businessarr[0]["namematch"][0].map(item => ({
             name: item["GroupName"],
             value: item["Count"],
             // color: item["GroupName"] === "greater than 66" ? 'rgb(126, 255, 126)' : "rgb(252, 126, 126)",
-            color: item["GroupName"] === "greater than 66" ? "rgb(126, 255, 126)" : item["GroupName"] === "Between 33 and 66" ? "rgb(248, 248, 67)" : item["GroupName"] === "less than 33" ? "rgb(248, 83, 83)": null
+            color: item["GroupName"] === "greater than 66" ? "rgb(126, 255, 126)" : item["GroupName"] === "Between 33 and 66" ? "rgb(248, 248, 67)" : item["GroupName"] === "less than 33" ? "rgb(248, 83, 83)": "rgb(255, 0, 157)" 
 
             
           })),
@@ -856,12 +860,12 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
     />  
 
 
-<div className="bg-slate-100 flex flex-col mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
+<div className=" flex flex-col mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
   {/* <p>legend</p> */}
-  <p style={{color: "rgb(126, 255, 126)"}}>greater than 66</p>
-  <p style={{color: "rgb(248, 248, 67)"}}>Between 33 and 66</p>
+  <p style={{fontWeight:'bold' , color: "rgb(126, 255, 126)"}}>greater than 66</p>
+  <p style={{fontWeight:'bold' ,color: "rgb(248, 248, 67)"}}>Between 33 and 66</p>
 
-  <p style={{color: "rgb(252, 126, 126)"}}>less than 33</p>
+  <p style={{fontWeight:'bold' ,color: "rgb(252, 126, 126)"}}>less than 33</p>
   {/* rgb(225, 238, 46) */}
 </div>
 
@@ -960,11 +964,16 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
     />  
 
 
-<div className="bg-slate-100 flex flex-col h-fit" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
+<div className="flex flex-col mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
   {/* <p>legend</p> */}
-  <p style={{color: "rgb(126, 255, 126)"}}>Has UPI</p>
-  <p style={{color: "rgb(252, 126, 126)"}}>No UPI</p>
-  {/* rgb(225, 238, 46) */}
+  <p style={{fontWeight:'bold' ,color: "rgb(126, 255, 126)"}}>Has UPI</p>
+  <p style={{fontWeight:'bold' ,color: "rgb(252, 126, 126)"}}>No UPI</p>
+
+
+
+
+  {/*  */}
+
 </div>
 
 
