@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "apis": [
+    {
+      "identifier": "bureauid",
+      "source": "@bureauid/v1.0#ikbfflvaqq1q9",
+      "integrity": "sha512-GaE1Cnric3LP9Pc2kfZdTRDmEa+xiCUkISJ2kL9FMOj90HcO4yqY/OWgCx1l+yIDQZudjlYvuELfi2OVasKoMw==",
+      "installerVersion": "6.1.1"
+    }
+  ]
+}

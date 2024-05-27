@@ -1,0 +1,10 @@
+.maindash {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.testingcard {
+  
+    background-color: coral;
+  }
