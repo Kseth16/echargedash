@@ -290,7 +290,7 @@ setTempholdingarr(findDataByPhoneNumber(mobileNumber));
   <>
   <div className="flex flex-row justify-between">
   
-{/* <PieChart
+ <PieChart
 
 
       series={[
@@ -326,7 +326,7 @@ setTempholdingarr(findDataByPhoneNumber(mobileNumber));
         },
       }}
       {...size}
-    />   */}
+    />   
 
 
 <div className="bg-slate-100 flex flex-col  mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
@@ -507,7 +507,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 <>
 <p className="absolute top-0 left-1/2 transform -translate-x-1/2 text-center text-tremor-default text-tremor-content dark:text-dark-tremor-content whitespace-nowrap">
 
-          <span className="font-bold">Social Media Count</span>
+          <span className="font-bold">Digital Age</span>
         </p>
 
 
@@ -520,18 +520,18 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
   <div className="flex flex-row justify-between">
  
 
-{/*  
+  
 <PieChart
 
 
       series={[
         {
           
-          data: businessarr[0]["acountsfound"].map(item => ({
-            name: item["heading"],
-            value: item["amount"],
+          data: businessarr[0]["digitalage"].map(item => ({
+            name: item["GroupName"],
+            value: item["Count"],
             
-             color: item["heading"] === "Less than 4 accounts" ? "rgb(0, 255, 0)" : item["heading"] === "Between 4 to 8 acocunts" ? "rgb(249, 72, 255)" : item["heading"] === "more than 8 accounts" ? "rgb(50, 54, 255)" : "rgb(255, 0, 0)"
+             color: item["GroupName"] === "less than 365" ? "rgb(0, 255, 0)" : item["GroupName"] === "Between 365 and 800" ? "rgb(249, 72, 255)" : item["GroupName"] === "greater than 800" ? "rgb(50, 54, 255)" : "rgb(255, 0, 0)"
 
           })),
           arcLabel: (item) => `${item.value}`,
@@ -557,13 +557,14 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
         },
       }}
       {...size}
-    />   */}
+    />   
 
 <div className="bg-slate-100 flex flex-col  mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
   {/* <p>legend</p> */}
-  <p style={{color:"rgb(0, 255, 0)"}}>Less than 4 accounts</p>
-  <p style={{color:'rgb(249, 72, 255)'}}>Between 4 to 8 accounts</p>
-  <p style={{color:'rgb(50, 54, 255)'}}>Between 8 to 12 accounts</p>
+  {/* <p style={{color:"rgb(0, 255, 0)"}}> </p> */}
+  <p style={{color: "rgb(0, 255, 0)"}}>&gt; 365 days</p>
+  <p style={{color:'rgb(249, 72, 255)'}}>365-800 days</p>
+  <p style={{color:'rgb(50, 54, 255)'}}>&lt; 800 days</p>
   {/* rgb(225, 238, 46) */}
 </div>
 
@@ -826,10 +827,12 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
       series={[
         {
           
-          data: businessarr[0]["upicount"].map(item => ({
-            name: item["upi"],
-            value: item["count"],
-            color: item["upi"] === "Yes" ? 'rgb(126, 255, 126)' : "rgb(252, 126, 126)",
+          data: businessarr[0]["namematch"].map(item => ({
+            name: item["GroupName"],
+            value: item["Count"],
+            // color: item["GroupName"] === "greater than 66" ? 'rgb(126, 255, 126)' : "rgb(252, 126, 126)",
+            color: item["GroupName"] === "greater than 66" ? "rgb(126, 255, 126)" : item["GroupName"] === "Between 33 and 66" ? "rgb(248, 248, 67)" : item["GroupName"] === "less than 33" ? "rgb(248, 83, 83)": null
+
             
           })),
           arcLabel: (item) => `${item.value}`,
@@ -855,8 +858,10 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 
 <div className="bg-slate-100 flex flex-col mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
   {/* <p>legend</p> */}
-  <p style={{color: "rgb(126, 255, 126)"}}>Has UPI</p>
-  <p style={{color: "rgb(252, 126, 126)"}}>No UPI</p>
+  <p style={{color: "rgb(126, 255, 126)"}}>greater than 66</p>
+  <p style={{color: "rgb(248, 248, 67)"}}>Between 33 and 66</p>
+
+  <p style={{color: "rgb(252, 126, 126)"}}>less than 33</p>
   {/* rgb(225, 238, 46) */}
 </div>
 

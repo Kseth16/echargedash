@@ -649,9 +649,9 @@ GROUP BY
             phonefootprint:phonefootprint.recordset,
             upicount:upicount.recordset,
             phonenamematch:phonenamematch.recordset,
-            acountsfound: acountfounddata.recordset,
+            acountsfound: acountfounddata,
             digitalage: digitalagedata.recordset,
-            namematch: namematchdata.recordset,
+            namematch: namematchdata.recordsets
         }]
         res.json(result);
         // console.log(result.recordset[0].value_count);
