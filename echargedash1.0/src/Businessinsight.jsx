@@ -10,6 +10,7 @@ import { faSquare } from '@fortawesome/free-solid-svg-icons';
 
 
 let businessarr=null;
+let dataarr=null;
 
 function Businessinsight(){
 
@@ -74,6 +75,8 @@ function Businessinsight(){
 
 useEffect(() => {
     fetchData();
+    console.log(businessarr);
+    console.log("numbers");
     // fetchbusinessdata();
     const div1Height = document.getElementById("div1").clientHeight;
     const div2Height = document.getElementById("div2").clientHeight;
@@ -345,7 +348,7 @@ setTempholdingarr(findDataByPhoneNumber(mobileNumber));
 <div className=" flex flex-col  mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
   {/* <p>legend</p> */}
   {/* <p style={{color:"rgb(0, 255, 0)"}}> >4 accounts</p> */}
-  <p style={{fontWeight:'bold' ,color: "rgb(0, 255, 0)"}}><FontAwesomeIcon icon={faSquare} />  &gt;4 accounts</p>
+  <p style={{fontWeight:'bold' ,color: "rgb(0, 255, 0)"}}><FontAwesomeIcon icon={faSquare} />  &lt;4 accounts</p>
   <p style={{fontWeight:'bold' ,color:'rgb(249, 72, 255)'}}><FontAwesomeIcon icon={faSquare} />  4 to 8 accounts</p>
   <p style={{fontWeight:'bold' ,color:'rgb(50, 54, 255)'}}><FontAwesomeIcon icon={faSquare} />  8 to 12 accounts</p>
   {/* rgb(225, 238, 46) */}
@@ -575,9 +578,9 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 <div className=" flex flex-col  mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
   {/* <p>legend</p> */}
   {/* <p style={{color:"rgb(0, 255, 0)"}}> </p> */}
-  <p style={{fontWeight:'bold' ,color: "rgb(0, 255, 0)"}}><FontAwesomeIcon icon={faSquare} />  &gt; 365 days</p>
+  <p style={{fontWeight:'bold' ,color: "rgb(0, 255, 0)"}}><FontAwesomeIcon icon={faSquare} />  &lt; 365 days</p>
   <p style={{fontWeight:'bold' ,color:'rgb(249, 72, 255)'}}><FontAwesomeIcon icon={faSquare} />  365-800 days</p>
-  <p style={{fontWeight:'bold' ,color:'rgb(50, 54, 255)'}}><FontAwesomeIcon icon={faSquare} />  &lt; 800 days</p>
+  <p style={{fontWeight:'bold' ,color:'rgb(50, 54, 255)'}}><FontAwesomeIcon icon={faSquare} />  &gt; 800 days</p>
   {/* rgb(225, 238, 46) */}
 </div>
 
@@ -793,9 +796,9 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 
 <div className=" flex flex-col  mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
   {/* <p>legend</p> */}
-  <p style={{fontWeight:'bold' ,color:"rgb(248, 83, 83)"}}><FontAwesomeIcon icon={faSquare} />  High</p>
+  <p style={{fontWeight:'bold' ,color:'rgb(80, 247, 80)'}}><FontAwesomeIcon icon={faSquare} />  High</p>
   <p style={{fontWeight:'bold' ,color:'rgb(248, 248, 67)'}}><FontAwesomeIcon icon={faSquare} />  Medium</p>
-  <p style={{fontWeight:'bold' ,color:'rgb(80, 247, 80)'}}><FontAwesomeIcon icon={faSquare} />  Low</p>
+  <p style={{fontWeight:'bold' ,color:'rgb(248, 83, 83)'}}><FontAwesomeIcon icon={faSquare} />  Low</p>
   {/* rgb(225, 238, 46) */}
 
 
@@ -1033,6 +1036,880 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 
 </>
 ):(null)}
+
+
+
+{(graphvisible)?(
+  <>
+
+<Card id="div2" style={{marginTop:'5px'}}>
+<div style={{display:"flex", flexDirection:"row", placeContent:"space-evenly" }}>
+
+
+<div style={{marginLeft:'50px', marginRight:'0px', marginTop: '5px'}}>
+
+    <p  className=" text-tremor-default text-tremor-content dark:text-dark-tremor-content whitespace-nowrap">
+          <span className="font-bold" >Driver Information</span>
+        </p>
+        {(businessarr !== null && businessarr[0]?.networksusedresult !== null) ? (
+
+        <p className="font-bold text-center">{businessarr[0]["totaldrivers"][0][""]}</p>
+        ):<p>Loading...</p>}
+
+</div>
+
+<div style={{width:'50%', position:"relative", top:"5px"}}>
+{(businessarr !== null && businessarr[0]?.networksusedresult !== null) ? (
+          <p className="text-tremor-default text-tremor-content dark:text-dark-tremor-content flex items-center justify-around">
+          <span style={{fontWeight:"bold"}}>{businessarr[0].riskamount.find(item => item.GroupName === "Low risk")?.Count || 0}</span>
+          {/* <p style={{ position:'absolute', top:"12px", left:"90px"}}>TEST</p> */}
+          <span style={{fontWeight:"bold"}}>{businessarr[0].riskamount.find(item => item.GroupName === "Medium risk")?.Count || 0}</span>
+          {/* <p style={{ position:'absolute', top:"12px", left:"310px"}}>TEST</p> */}
+          <span style={{fontWeight:"bold"}}>{businessarr[0].riskamount.find(item => item.GroupName === "High Risk")?.Count || 0}</span>
+          {/* <p style={{ position:'absolute', top:"12px", right:"90px"}}>TEST</p> */}
+
+        </p>
+):<p>Loading...</p>}
+<CategoryBar 
+            values={[333, 333, 334]}
+            showLabels={false}
+            colors={['emerald', 'yellow', 'rose']}
+          
+            
+          />
+
+<p className="text-tremor-default text-tremor-content dark:text-dark-tremor-content flex items-center justify-around">
+          <span>Low Risk</span>
+          {/* <p style={{ position:'absolute', top:"12px", left:"90px"}}>TEST</p> */}
+          <span>Medium Risk</span>
+          {/* <p style={{ position:'absolute', top:"12px", left:"310px"}}>TEST</p> */}
+          <span>High Risk</span>
+          {/* <p style={{ position:'absolute', top:"12px", right:"90px"}}>TEST</p> */}
+
+        </p>
+</div>
+
+
+
+</div>
+</Card>
+
+
+<div className="flex flex-row gap-1 mt-1" style={{height: `${remainingHeight}px`, overflow:'hidden'}}>
+
+{/* <div className="flex flex-col w-1/3"> */}
+<div className="flex flex-col w-1/3 " >
+
+<Card style={{height:'33%', maxHeight:'33%'}}>
+<div >
+
+<>
+<p className="absolute top-0 left-1/2 transform -translate-x-1/2 text-center text-tremor-default text-tremor-content dark:text-dark-tremor-content whitespace-nowrap">
+<span className="font-bold"> Social Score</span>
+</p>
+</>
+  
+  <>
+
+
+        {(businessarr !== null && businessarr[0]?.networksusedresult !== null) ? (
+
+        <div  className="flex flex-col">
+
+            <div style={{width:'70%', marginLeft:'60px'}} >
+         <GaugeChart id="avgsocialscore" 
+            
+            
+            colors={["#ff0000", "rgb(255, 255, 0)","rgb(0, 255, 0)"]}
+            nrOfLevels={20}
+            percent={(businessarr!==null)?((businessarr[0]["socialscore"][0]["Avg_socialscore"])/1000):(0)}
+            hideText
+            
+            
+            />
+            </div>
+
+            
+      <span style={{marginTop:"-15px"}}  className="font-bold flex justify-center items-center">{(businessarr!==null)?((businessarr[0]["socialscore"][0]["Avg_socialscore"])):(<p className="font-bold text-center">LOADING...</p>)}</span>
+
+
+      </div> 
+
+
+
+
+      
+
+
+
+
+
+
+
+
+):(<p className="font-bold text-center">LOADING...</p>)}
+</>
+
+
+
+</div>
+
+
+</Card>
+
+<Card style={{height:'33%'}}>
+
+
+
+<>
+<p className="absolute top-0 left-1/2 transform -translate-x-1/2 text-center text-tremor-default text-tremor-content dark:text-dark-tremor-content whitespace-nowrap">
+
+          <span className="font-bold">Social Media 
+          </span>
+        </p>
+
+
+<>
+
+{(businessarr !== null && businessarr[0]?.acountsfound !== null) ? (
+
+
+  <>
+  <div style={{position:"absolute",left:"100px"}} className="flex flex-row justify-between">
+  
+ <PieChart
+
+
+      series={[
+        {
+          
+          data: businessarr[0]["acountsfound"].map(item => ({
+            name: item["heading"],
+            value: item["amount"],
+            
+             color: item["heading"] === "Less than 4 accounts" ? "rgb(126, 255, 126)" : item["heading"] === "Between 4 to 8 acocunts" ? "rgb(249, 72, 255)" : item["heading"] === "more than 8 accounts" ? "rgb(50, 54, 255)" : "rgb(255, 0, 0)"
+
+          })),
+          arcLabel: (item) => `${item.value}`,
+          arcLabelMinAngle: 45,
+          cx: '70%',
+          
+          cy: '10%',
+          outerRadius: '130%',
+          
+          
+        },
+      ]}
+
+     
+
+      
+      
+      sx={{
+        [`& .${pieArcLabelClasses.root}`]: {
+          fill: 'black',
+          fontSize:"15px",
+          fontWeight: 'bold',
+        },
+      }}
+      {...size}
+    />   
+
+
+<div className=" flex flex-col  mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
+  {/* <p>legend</p> */}
+  {/* <p style={{color:"rgb(0, 255, 0)"}}> >4 accounts</p> */}
+  <p style={{fontWeight:'bold' ,color: "rgb(0, 255, 0)"}}><FontAwesomeIcon icon={faSquare} />  &lt;4 accounts</p>
+  <p style={{fontWeight:'bold' ,color:'rgb(249, 72, 255)'}}><FontAwesomeIcon icon={faSquare} />  4 to 8 accounts</p>
+  <p style={{fontWeight:'bold' ,color:'rgb(50, 54, 255)'}}><FontAwesomeIcon icon={faSquare} />  8 to 12 accounts</p>
+  {/* rgb(225, 238, 46) */}
+</div>
+
+
+
+</div>
+
+
+
+
+</>
+
+
+
+
+
+
+):(<p className="font-bold text-center">LOADING...</p>)}
+
+</>
+</>
+
+
+
+
+</Card>
+
+
+<Card style={{height:'33%'}}>
+<>
+<p className="absolute top-0 left-1/2 transform -translate-x-1/2 text-center text-tremor-default text-tremor-content dark:text-dark-tremor-content whitespace-nowrap">
+          <span className="font-bold">Top 4 Social Sites</span>
+        </p>
+
+
+<>
+{(businessarr !== null && businessarr[0]?.networksusedresult !== null) ? (
+
+
+<>
+
+<div >
+<BarList
+data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
+/>
+</div>
+
+
+
+      </>
+      ):(<p className="font-bold text-center">LOADING...</p>)}
+</>
+</>
+
+
+
+
+
+</Card>
+</div>
+
+
+<div className="flex flex-col w-1/3">
+
+<Card style={{height:'33%'}}>
+    
+
+<>
+<p  className="absolute top-0 left-1/2 transform -translate-x-1/2 text-center text-tremor-default text-tremor-content dark:text-dark-tremor-content whitespace-nowrap">
+
+          <span className="font-bold"> Telecom Risk Score
+
+</span>
+
+          
+        </p>
+
+
+<>
+
+{(businessarr !== null && businessarr[0]?.networksusedresult !== null) ? (
+
+
+  <>
+    <div style={{position:"absolute",left:"100px"}} className="flex flex-row justify-between">
+
+ 
+<PieChart
+
+
+      series={[
+        {
+          
+          data: businessarr[0]["totalriskmodel"].map(item => ({
+            name: item["Risk_Model.telecomRisk"],
+            value: item["value_count"],
+            color: item["Risk_Model.telecomRisk"] === "High" ? "rgb(248, 83, 83)" : item["Risk_Model.telecomRisk"] === "Medium" ? "rgb(248, 248, 67)" : item["Risk_Model.telecomRisk"] === "Low" ? "rgb(80, 247, 80)": null,
+            
+          })),
+          arcLabel: (item) => `${item.value}`,
+          arcLabelMinAngle: 45,
+          cx: '70%',
+          
+          cy: '10%',
+          outerRadius: '130%',
+          
+
+        },
+      ]}
+      sx={{
+        [`& .${pieArcLabelClasses.root}`]: {
+          fill: 'black',
+          fontSize:"15px",
+          fontWeight: 'bold',
+        },
+      }}
+      {...size}
+    /> 
+
+
+<div className=" flex flex-col  mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
+  {/* <p>legend</p> */}
+  <p style={{fontWeight:'bold' ,color:"rgb(248, 83, 83)"}}><FontAwesomeIcon icon={faSquare} />  High</p>
+  <p style={{fontWeight:'bold' ,color:'rgb(248, 248, 67)'}}><FontAwesomeIcon icon={faSquare} />  Medium</p>
+  <p style={{fontWeight:'bold' ,color:'rgb(80, 247, 80)'}}><FontAwesomeIcon icon={faSquare} />  Low</p>
+  {/* rgb(225, 238, 46) */}
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</>
+
+
+
+
+):(<p className="font-bold text-center">LOADING...</p>)}
+
+</>
+</>
+
+
+
+
+
+
+
+
+
+
+
+
+</Card>
+
+<Card style={{height:'33%'}}>
+   
+   
+
+
+<>
+<p className="absolute top-0 left-1/2 transform -translate-x-1/2 text-center text-tremor-default text-tremor-content dark:text-dark-tremor-content whitespace-nowrap">
+
+          <span className="font-bold">Digital Age</span>
+        </p>
+
+
+<>
+
+{(businessarr !== null && businessarr[0]?.networksusedresult !== null) ? (
+
+
+  <>
+  <div style={{position:"absolute",left:"100px"}} className="flex flex-row justify-between">
+ 
+
+  
+<PieChart
+
+
+      series={[
+        {
+          
+          data: businessarr[0]["digitalage"].map(item => ({
+            name: item["GroupName"],
+            value: item["Count"],
+            
+             color: item["GroupName"] === "less than 365" ? "rgb(0, 255, 0)" : item["GroupName"] === "Between 365 and 800" ? "rgb(249, 72, 255)" : item["GroupName"] === "greater than 800" ? "rgb(50, 54, 255)" : "rgb(255, 0, 0)"
+
+          })),
+          arcLabel: (item) => `${item.value}`,
+          arcLabelMinAngle: 45,
+          cx: '70%',
+          
+          cy: '10%',
+          outerRadius: '130%',
+          
+          
+        },
+      ]}
+
+     
+
+      
+      
+      sx={{
+        [`& .${pieArcLabelClasses.root}`]: {
+          fill: 'black',
+          fontSize:"15px",
+          fontWeight: 'bold',
+        },
+      }}
+      {...size}
+    />   
+
+<div className=" flex flex-col  mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
+  {/* <p>legend</p> */}
+  {/* <p style={{color:"rgb(0, 255, 0)"}}> </p> */}
+  <p style={{fontWeight:'bold' ,color: "rgb(0, 255, 0)"}}><FontAwesomeIcon icon={faSquare} />  &lt; 365 days</p>
+  <p style={{fontWeight:'bold' ,color:'rgb(249, 72, 255)'}}><FontAwesomeIcon icon={faSquare} />  365-800 days</p>
+  <p style={{fontWeight:'bold' ,color:'rgb(50, 54, 255)'}}><FontAwesomeIcon icon={faSquare} />  &gt; 800 days</p>
+  {/* rgb(225, 238, 46) */}
+</div>
+
+
+
+</div>
+
+
+
+
+</>
+
+
+
+
+
+
+):(<p className="font-bold text-center">LOADING...</p>)}
+
+</>
+</>
+
+
+
+
+
+</Card>
+
+<Card style={{height:'33%'}}>
+
+<div  style={{marginTop:'-25px'}}>
+
+
+{(businessarr !== null && businessarr[0]?.networksusedresult !== null) ? (
+
+
+<div className="flex flex-row justify-between">
+
+<p className="whitespace-nowrap" style={{position:'absolute', left:'10px'}}>Reachable/Non-Reachable </p>
+
+<div className="flex flex-row justify-between">
+
+ <PieChart
+
+
+      series={[
+        {
+          
+          data: businessarr[0]["prepaidPostpaid"].map(item => ({
+            name: item["Phone_Network.numberBillingType"],
+            value: item["value_count"],
+            color: item["Phone_Network.numberBillingType"] === "prepaid" ? "rgb(126, 255, 126)":  "rgb(252, 126, 126)"
+            
+          })),
+          arcLabel: (item) => `${item.value}`,
+          arcLabelMinAngle: 45,
+          cx: '40%',
+          
+          cy: '35%',
+          outerRadius: '80%',
+
+        },
+      ]}
+      sx={{
+        [`& .${pieArcLabelClasses.root}`]: {
+          fill: 'black',
+          fontSize:"15px",
+          fontWeight: 'bold',
+        },
+      }}
+      {...size}
+    />  
+
+<div className=" flex flex-col mt-12" style={{position:'absolute', right:'225px', bottom:'30px'}}  >
+
+{/* <div className="bg-slate-100 flex flex-col  mt-4" style={{position:'absolute', right:'230px', width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >  */}
+
+  {/* <p>legend</p> */}
+  <p style={{fontWeight:'bold' ,color: "rgb(126, 255, 126)"}}><FontAwesomeIcon icon={faSquare} />Prepaid</p>
+  <p style={{fontWeight:'bold' ,color: "rgb(252, 126, 126)"}}><FontAwesomeIcon icon={faSquare} />Postpaid</p>
+</div>
+</div>
+
+
+<div className="flex flex-col">
+
+
+  {/* the heading */}
+<p className="whitespace-nowrap" style={{position:'absolute', right:'10px'}}>Reachable/Non-Reachable </p>
+
+
+
+{/* the chart */}
+<>
+
+
+<div style={{position:'absolute', left:'225px'}}>
+   
+ <PieChart
+      
+
+      series={[
+        {
+          
+          data: businessarr[0]["phonereachable"].map(item => ({
+            name: item["Phone_Network.isPhoneReachable"],
+            value: item["value_count"],
+            color: item["Phone_Network.isPhoneReachable"] === "TRUE" ? "rgb(126, 255, 126)" : 'rgb(252, 126, 126)',
+            
+          })),
+          arcLabel: (item) => `${item.value}`,
+          arcLabelMinAngle: 45,
+          cx: '40%',
+          
+          cy: '35%',
+          outerRadius: '80%',
+
+        },
+      ]}
+      sx={{
+        [`& .${pieArcLabelClasses.root}`]: {
+          fill: 'black',
+          fontSize:"15px",
+          fontWeight: 'bold',
+        },
+      }}
+      {...size}
+    />  
+    </div>
+
+
+
+<div className="  flex flex-col mt-12" style={{position:'absolute', right:'-1.5px', bottom:'30px'}}  >
+  {/* <p>legend</p> */}
+  <p style={{fontWeight:'bold' ,color: "rgb(126, 255, 126)"}}><FontAwesomeIcon icon={faSquare} />Reachable</p>
+  <p style={{fontWeight:'bold',color: "rgb(252, 126, 126)"}}><FontAwesomeIcon icon={faSquare} />Unreachable</p>
+
+</div>
+
+
+</>
+
+</div>
+
+
+</div>
+):(<p className="font-bold text-center">LOADING...</p>)}
+
+
+</div>
+</Card>
+</div>
+
+
+
+<div className="flex flex-col w-1/3">
+
+<Card style={{height:'33%'}}>
+<>
+
+
+<p  className="absolute top-0 left-1/2 transform -translate-x-1/2 text-center text-tremor-default text-tremor-content dark:text-dark-tremor-content whitespace-nowrap">
+
+  <span className="font-bold"> Identity Confidence Score
+ 
+</span>
+
+
+        </p>
+{(businessarr !== null && businessarr[0]?.networksusedresult !== null) ? (
+
+<div className="flex flex-row justify between">
+
+ 
+<PieChart
+      
+
+      
+      series={[
+        {
+          
+          data: businessarr[0]["identityConfidenceScore"].map(item => ({
+            name: item["Risk_Model.identityConfidence"],
+            value: item["value_count"],
+            color: item["Risk_Model.identityConfidence"] === "High" ? "rgb(126, 255, 126)" : item["Risk_Model.identityConfidence"] === "Medium" ? "rgb(248, 248, 67)" : item["Risk_Model.identityConfidence"] === "Low" ? "rgb(248, 83, 83)": null
+          })),
+          arcLabel: (item) => `${item.value}`,
+          arcLabelMinAngle: 45,
+          cx: '70%',
+          
+          cy: '10%',
+          outerRadius: '130%',
+
+        },
+      ]}
+      
+      sx={{
+        [`& .${pieArcLabelClasses.root}`]: {
+          fill: 'black',
+          fontSize:"15px",
+          fontWeight: 'bold',
+        },
+      }}
+      {...size}
+    />  
+
+
+
+
+
+
+
+
+<div className=" flex flex-col  mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
+  {/* <p>legend</p> */}
+  <p style={{fontWeight:'bold' ,color:'rgb(80, 247, 80)'}}><FontAwesomeIcon icon={faSquare} />  High</p>
+  <p style={{fontWeight:'bold' ,color:'rgb(248, 248, 67)'}}><FontAwesomeIcon icon={faSquare} />  Medium</p>
+  <p style={{fontWeight:'bold' ,color:'rgb(248, 83, 83)'}}><FontAwesomeIcon icon={faSquare} />  Low</p>
+  {/* rgb(225, 238, 46) */}
+
+
+
+</div>
+      
+
+      </div>
+):(<p className="font-bold text-center">LOADING...</p>)}
+
+
+
+</>
+</Card>
+
+<Card style={{height:'33%'}}>
+    
+
+<>
+<p  className="absolute top-0 left-1/2 transform -translate-x-1/2 text-center text-tremor-default text-tremor-content dark:text-dark-tremor-content whitespace-nowrap">
+
+          <span className="font-bold"> Phone Name Match
+
+</span>
+
+          
+        </p>
+
+
+<>
+
+{(businessarr !== null && businessarr[0]?.networksusedresult !== null) ? (
+
+
+  <>
+    <div className="flex flex-row justify-between">
+
+  
+<PieChart
+       style={{
+        position: "relative", // Add position property
+        zIndex: "1000000000000000", // Set a higher z-index value
+      }}
+
+
+      series={[
+        {
+          
+          data: businessarr[0]["namematch"][0].map(item => ({
+            name: item["GroupName"],
+            value: item["Count"],
+            // color: item["GroupName"] === "greater than 66" ? 'rgb(126, 255, 126)' : "rgb(252, 126, 126)",
+            color: item["GroupName"] === "greater than 66" ? "rgb(126, 255, 126)" : item["GroupName"] === "Between 33 and 66" ? "rgb(248, 248, 67)" : item["GroupName"] === "less than 33" ? "rgb(248, 83, 83)": "rgb(255, 0, 157)" 
+
+            
+          })),
+          arcLabel: (item) => `${item.value}`,
+          arcLabelMinAngle: 45,
+          cx: '70%',
+          
+          cy: '10%',
+          outerRadius: '130%',
+          
+
+        },
+      ]}
+      sx={{
+        [`& .${pieArcLabelClasses.root}`]: {
+          fill: 'black',
+          fontSize:"15px",
+          fontWeight: 'bold',
+        },
+      }}
+      {...size}
+    />  
+
+
+<div className=" flex flex-col mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
+  {/* <p>legend</p> */}
+  <p style={{fontWeight:'bold' , color: "rgb(126, 255, 126)"}}><FontAwesomeIcon icon={faSquare} />  greater than 66</p>
+  <p style={{fontWeight:'bold' ,color: "rgb(248, 248, 67)"}}><FontAwesomeIcon icon={faSquare} />  Between 33 and 66</p>
+
+  <p style={{fontWeight:'bold' ,color: "rgb(252, 126, 126)"}}><FontAwesomeIcon icon={faSquare} />  less than 33</p>
+  {/* rgb(225, 238, 46) */}
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</>
+
+
+
+
+):(<p className="font-bold text-center">LOADING...</p>)}
+
+</>
+</>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</Card>
+
+<Card style={{height:'33%'}}>
+     
+
+<>
+<p  className="absolute top-0 left-1/2 transform -translate-x-1/2 text-center text-tremor-default text-tremor-content dark:text-dark-tremor-content whitespace-nowrap">
+
+          <span className="font-bold"> UPI
+
+</span>
+
+          
+        </p>
+
+
+<>
+
+{(businessarr !== null && businessarr[0]?.networksusedresult !== null) ? (
+
+
+  <>
+    <div className="flex flex-row justify-between">
+
+
+
+  
+<PieChart
+
+
+      series={[
+        {
+          
+          data: businessarr[0]["upicount"].map(item => ({
+            name: item["upi"],
+            value: item["count"],
+            color: item["upi"] === "Yes" ? 'rgb(126, 255, 126)' : "rgb(252, 126, 126)",
+            
+          })),
+          arcLabel: (item) => `${item.value}`,
+          arcLabelMinAngle: 45,
+          cx: '70%',
+          
+          cy: '10%',
+          outerRadius: '130%',
+          
+
+        },
+      ]}
+      sx={{
+        [`& .${pieArcLabelClasses.root}`]: {
+          fill: 'black',
+          fontSize:"15px",
+          fontWeight: 'bold',
+        },
+      }}
+      {...size}
+    />  
+
+
+<div className="flex flex-col mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
+  {/* <p>legend</p> */}
+  <p style={{fontWeight:'bold' ,color: "rgb(126, 255, 126)"}}><FontAwesomeIcon icon={faSquare} />  Has UPI</p>
+  <p style={{fontWeight:'bold' ,color: "rgb(252, 126, 126)"}}><FontAwesomeIcon icon={faSquare} />  No UPI</p>
+
+
+
+
+  {/*  */}
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</>
+
+
+
+
+):(<p className="font-bold text-center">LOADING...</p>)}
+
+</>
+</>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</Card>
+</div>
+
+</div>
+
+</>
+):(null)}
+
+
+
 </div>
 
 
