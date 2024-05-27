@@ -292,7 +292,7 @@ setTempholdingarr(findDataByPhoneNumber(mobileNumber));
 
 
   <>
-  <div style={{justifyContent:'center'}} className="flex flex-row ">
+  <div style={{position:"absolute",left:"100px"}} className="flex flex-row justify-between">
   
  <PieChart
 
@@ -423,7 +423,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 
 
   <>
-    <div className="flex flex-row justify-between">
+    <div style={{position:"absolute",left:"100px"}} className="flex flex-row justify-between">
 
  
 <PieChart
@@ -521,7 +521,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 
 
   <>
-  <div className="flex flex-row justify-between">
+  <div style={{position:"absolute",left:"100px"}} className="flex flex-row justify-between">
  
 
   
@@ -740,7 +740,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
         </p>
 {(businessarr !== null && businessarr[0]?.networksusedresult !== null) ? (
 
-<div className="flex flex-row justify between">
+<div style={{position:"absolute",left:"100px"}} className="flex flex-row justify between">
 
  
 <PieChart
@@ -822,7 +822,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 
 
   <>
-    <div className="flex flex-row justify-between">
+    <div style={{position:"absolute",left:"100px"}} className="flex flex-row justify-between">
 
   
 <PieChart
@@ -930,7 +930,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 
 
   <>
-    <div className="flex flex-row justify-between">
+    <div style={{position:"absolute",left:"100px"}} className="flex flex-row justify-between">
 
 
 
