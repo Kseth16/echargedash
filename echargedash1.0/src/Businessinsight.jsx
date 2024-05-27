@@ -292,7 +292,7 @@ setTempholdingarr(findDataByPhoneNumber(mobileNumber));
 
 
   <>
-  <div className="flex flex-row justify-center">
+  <div style={{justifyContent:'center'}} className="flex flex-row ">
   
  <PieChart
 
