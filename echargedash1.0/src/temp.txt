@@ -1,0 +1,72 @@
+
+<>
+
+{(businessarr !== null && businessarr[0]?.namematch !== null) ? (
+
+
+  <>
+    <div className="flex flex-row justify-between">
+
+ 
+<PieChart
+
+
+      series={[
+        {
+          
+          data: businessarr[0]["namematch"].map(item => ({
+            name: item["GroupName"],
+            value: item["Count"],
+            color: item["GroupName"] === "Between 33 and 66" ? "rgb(252, 126, 126)" : item["GroupName"] === "greater than 66" ? "rgb(248, 248, 67)" : item["GroupName"] === "less than 33" ? 'rgb(126, 255, 126)': 'rgb(126, 255, 126)'
+
+            
+          })),
+          arcLabel: (item) => `${item.value}`,
+          arcLabelMinAngle: 45,
+          cx: '70%',
+          
+          cy: '10%',
+          outerRadius: '130%',
+          
+
+        },
+      ]}
+      sx={{
+        [`& .${pieArcLabelClasses.root}`]: {
+          fill: 'black',
+          fontSize:"15px",
+          fontWeight: 'bold',
+        },
+      }}
+      {...size}
+    /> 
+
+
+<div className="bg-slate-100 flex flex-col mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
+  {/* <p>legend</p> */}
+  <p style={{color: "rgb(126, 255, 126)"}}>Has UPI</p>
+  <p style={{color: "rgb(252, 126, 126)"}}>No UPI</p>
+  {/* rgb(225, 238, 46) */}
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</>
+
+
+
+
+):(<p className="font-bold text-center">LOADING...</p>)}
+
+</>

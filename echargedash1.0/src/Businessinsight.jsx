@@ -284,13 +284,13 @@ setTempholdingarr(findDataByPhoneNumber(mobileNumber));
 
 <>
 
-{(businessarr !== null && businessarr[0]?.networksusedresult !== null) ? (
+{(businessarr !== null && businessarr[0]?.acountsfound !== null) ? (
 
 
   <>
   <div className="flex flex-row justify-between">
-
-<PieChart
+  
+{/* <PieChart
 
 
       series={[
@@ -326,7 +326,8 @@ setTempholdingarr(findDataByPhoneNumber(mobileNumber));
         },
       }}
       {...size}
-    />
+    />   */}
+
 
 <div className="bg-slate-100 flex flex-col  mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
   {/* <p>legend</p> */}
@@ -420,7 +421,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
   <>
     <div className="flex flex-row justify-between">
 
-
+ 
 <PieChart
 
 
@@ -451,7 +452,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
         },
       }}
       {...size}
-    />
+    /> 
 
 
 <div className="bg-slate-100 flex flex-col  mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
@@ -517,7 +518,9 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 
   <>
   <div className="flex flex-row justify-between">
+ 
 
+{/*  
 <PieChart
 
 
@@ -554,7 +557,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
         },
       }}
       {...size}
-    />
+    />   */}
 
 <div className="bg-slate-100 flex flex-col  mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
   {/* <p>legend</p> */}
@@ -603,7 +606,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 
 <div className="flex flex-row justify-between">
 
-<PieChart
+ <PieChart
 
 
       series={[
@@ -632,7 +635,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
         },
       }}
       {...size}
-    />
+    />  
 
 <div className="bg-slate-100 flex flex-col mt-12" style={{position:'absolute', right:'230px'}}  >
 
@@ -658,7 +661,8 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 
 
 <div style={{position:'absolute', left:'225px'}}>
-<PieChart
+   
+ <PieChart
       
 
       series={[
@@ -687,7 +691,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
         },
       }}
       {...size}
-    />
+    />  
     </div>
 
 
@@ -733,7 +737,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 
 <div className="flex flex-row justify between">
 
-
+ 
 <PieChart
       
 
@@ -764,7 +768,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
         },
       }}
       {...size}
-    />
+    />  
 
 
 
@@ -815,7 +819,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
   <>
     <div className="flex flex-row justify-between">
 
-
+  
 <PieChart
 
 
@@ -846,7 +850,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
         },
       }}
       {...size}
-    />
+    />  
 
 
 <div className="bg-slate-100 flex flex-col mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
@@ -916,6 +920,8 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
     <div className="flex flex-row justify-between">
 
 
+
+  
 <PieChart
 
 
@@ -946,7 +952,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
         },
       }}
       {...size}
-    />
+    />  
 
 
 <div className="bg-slate-100 flex flex-col h-fit" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
