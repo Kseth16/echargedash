@@ -628,7 +628,29 @@ GROUP BY
         WHEN [Phone_Name_Attributes.nameMatchScore] BETWEEN 33 AND 66 THEN 'Between 33 and 66'
         ELSE 'greater than 66'
     END;
+`);
+
+
+const scorenumbers= await sql.query(`
+SELECT 
+    CASE 
+        WHEN [Risk_Model.alternateRiskScore] < 300 THEN 'Low risk'
+        WHEN [Risk_Model.alternateRiskScore] BETWEEN 300 AND 600 THEN 'Medium risk'
+        ELSE 'High Risk'
+    END AS GroupName,
+    COUNT(*) AS Count
+FROM 
+    [Risk_score]
+GROUP BY 
+    CASE 
+        WHEN [Risk_Model.alternateRiskScore] < 300 THEN 'Low risk'
+        WHEN [Risk_Model.alternateRiskScore] BETWEEN 300 AND 600 THEN 'Medium risk'
+        ELSE 'High Risk'
+    END;
+
 `)
+
+
 
 
         
@@ -651,7 +673,8 @@ GROUP BY
             phonenamematch:phonenamematch.recordset,
             acountsfound: acountfounddata,
             digitalage: digitalagedata.recordset,
-            namematch: namematchdata.recordsets
+            namematch: namematchdata.recordsets,
+            riskamount: scorenumbers.recordset,
         }]
         res.json(result);
         // console.log(result.recordset[0].value_count);
