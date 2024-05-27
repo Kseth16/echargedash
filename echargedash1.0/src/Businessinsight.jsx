@@ -132,7 +132,12 @@ useEffect(() => {
 
 
     return(
-        <>
+<>
+
+
+
+
+        
 <div style={{ minHeight: "100%", overflowY: "auto", overflow:'hidden' }}>
 
 
@@ -159,6 +164,10 @@ setTempholdingarr(findDataByPhoneNumber(mobileNumber));
 }} >Search Driver</Button>
 
 </div>
+
+
+{(businessInsightVisible)?(
+<>
 
 <Card id="div2" style={{marginTop:'5px'}}>
 <div style={{display:"flex", flexDirection:"row", placeContent:"space-evenly" }}>
@@ -740,7 +749,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
         </p>
 {(businessarr !== null && businessarr[0]?.networksusedresult !== null) ? (
 
-<div style={{position:"absolute",left:"100px"}} className="flex flex-row justify between">
+<div className="flex flex-row justify between">
 
  
 <PieChart
@@ -822,7 +831,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 
 
   <>
-    <div style={{position:"absolute",left:"100px"}} className="flex flex-row justify-between">
+    <div className="flex flex-row justify-between">
 
   
 <PieChart
@@ -930,7 +939,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 
 
   <>
-    <div style={{position:"absolute",left:"100px"}} className="flex flex-row justify-between">
+    <div className="flex flex-row justify-between">
 
 
 
@@ -1021,6 +1030,9 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 </div>
 
 </div>
+
+</>
+):(null)}
 </div>
 
 
@@ -1028,8 +1040,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 
         
         
-        </>
-  
+</>
     );
 }
 
