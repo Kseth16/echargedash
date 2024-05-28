@@ -354,7 +354,7 @@ function Onboarding(){
 
 
 
-        const foundData = dataarr.find(item => item.Phone_Number === phoneNumber);
+        const foundData = dataarr.find(item => item.recordsets.Phone_Number === phoneNumber);
         if (!foundData) {
             console.log("No data found for the provided phone number:", phoneNumber);
             setGraphVisibility(false);

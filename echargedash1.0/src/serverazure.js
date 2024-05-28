@@ -278,7 +278,7 @@ app.get('/api/getriskscore',async (req,res) =>{
         await sql.connect(dbConfig);
 
         const query=`
-        SELECT [Phone_Number],[name],[Risk_Model.alternateRiskScore],[Risk_Model.digitalFootprint],[Risk_Model.identityConfidence] ,[Risk_Model.socialFootprintScore],[Risk_Model.telecomRisk] ,[Zone],[City],[State]FROM [dbo].[Risk_score]
+        SELECT * FROM [dbo].[Risk_score]
         `
 
 const result= await sql.query(query);

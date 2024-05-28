@@ -1,3 +1,7 @@
+// to update
+// make sizes respnsive change all hardocded calues to percentages so that it updated with all screens properly
+
+
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 // import { BarList } from '@tremor/react';
@@ -43,7 +47,8 @@ function Businessinsight(){
         }
 
         const data1 = await response1.json();
-        dataarr = data1.recordset;
+        dataarr = data1;
+        console.log("test")
         console.log(dataarr);
     } catch (error) {
         console.error("Error fetching getriskscore: ", error);
@@ -98,11 +103,25 @@ useEffect(() => {
     
 
 
-    const foundData = dataarr.find(item => item.Phone_Number === phoneNumber);
+    // const foundData = dataarr.find(item => item.Phone_Number === phoneNumber);
+    // if (!foundData) {
+    //     console.log("No data found for the provided phone number:", phoneNumber);
+    //     setGraphVisibility(false);
+    //     setBusinessInsightVisible(true);
+    //     return null;
+    // } else {
+    //     console.log("Data found for the provided phone number:", phoneNumber);
+    //     setBusinessInsightVisible(false);
+    //     setGraphVisibility(true);
+    //     return foundData;
+    // }
+
+
+    const foundData = dataarr.find(item => item.recordsets.Phone_Number === phoneNumber);
     if (!foundData) {
         console.log("No data found for the provided phone number:", phoneNumber);
-        setGraphVisibility(false);
-        setBusinessInsightVisible(true);
+        setGraphVisibility(true);
+        setBusinessInsightVisible(false);
         return null;
     } else {
         console.log("Data found for the provided phone number:", phoneNumber);
@@ -161,6 +180,7 @@ setTempholdingarr(findDataByPhoneNumber(0));
 console.log(mobileNumber);
 console.log(dataarr);
 setTempholdingarr(findDataByPhoneNumber(mobileNumber));
+
 
 
 
@@ -316,7 +336,7 @@ setTempholdingarr(findDataByPhoneNumber(mobileNumber));
             name: item["heading"],
             value: item["amount"],
             
-             color: item["heading"] === "Less than 4 accounts" ? "rgb(126, 255, 126)" : item["heading"] === "Between 4 to 8 acocunts" ? "rgb(249, 72, 255)" : item["heading"] === "more than 8 accounts" ? "rgb(50, 54, 255)" : "rgb(255, 0, 0)"
+             color: item["heading"] === "Less than 4 accounts" ? "rgb(179, 246, 179)" : item["heading"] === "Between 4 to 8 acocunts" ? "rgb(251, 144, 255)" : item["heading"] === "more than 8 accounts" ? "rgb(128, 253, 255)" : "rgb(255, 0, 0)"
 
           })),
           arcLabel: (item) => `${item.value}`,
@@ -619,7 +639,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 
 <div className="flex flex-row justify-between">
 
-<p className="whitespace-nowrap" style={{position:'absolute', left:'10px'}}>Reachable/Non-Reachable </p>
+<p className="whitespace-nowrap" style={{position:'absolute', left:'10px'}}>Prepaid/Postpaid </p>
 
 <div className="flex flex-row justify-between">
 
@@ -654,7 +674,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
       {...size}
     />  
 
-<div className=" flex flex-col mt-12" style={{position:'absolute', right:'225px', bottom:'30px'}}  >
+<div className=" flex flex-col mt-12" style={{position:'absolute', left:'30%', bottom:'30%'}}  >
 
 {/* <div className="bg-slate-100 flex flex-col  mt-4" style={{position:'absolute', right:'230px', width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >  */}
 
@@ -693,7 +713,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
           })),
           arcLabel: (item) => `${item.value}`,
           arcLabelMinAngle: 45,
-          cx: '40%',
+          cx: '50%',
           
           cy: '35%',
           outerRadius: '80%',
@@ -713,7 +733,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 
 
 
-<div className="  flex flex-col mt-12" style={{position:'absolute', right:'-1.5px', bottom:'30px'}}  >
+<div className="  flex flex-col mt-12" style={{position:'absolute', right:'5%', bottom:'30%'}}  >
   {/* <p>legend</p> */}
   <p style={{fontWeight:'bold' ,color: "rgb(126, 255, 126)"}}><FontAwesomeIcon icon={faSquare} />Reachable</p>
   <p style={{fontWeight:'bold',color: "rgb(252, 126, 126)"}}><FontAwesomeIcon icon={faSquare} />Unreachable</p>
@@ -1053,7 +1073,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
         </p>
         {(businessarr !== null && businessarr[0]?.networksusedresult !== null) ? (
 
-        <p className="font-bold text-center">{businessarr[0]["totaldrivers"][0][""]}</p>
+        <p className="font-bold text-center">{dataarr}</p>
         ):<p>Loading...</p>}
 
 </div>
