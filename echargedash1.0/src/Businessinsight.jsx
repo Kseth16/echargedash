@@ -368,9 +368,12 @@ setTempholdingarr(findDataByPhoneNumber(mobileNumber));
 <div className=" flex flex-col  mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
   {/* <p>legend</p> */}
   {/* <p style={{color:"rgb(0, 255, 0)"}}> >4 accounts</p> */}
-  <p style={{fontWeight:'bold' ,color: "rgb(0, 255, 0)"}}><FontAwesomeIcon icon={faSquare} />  &lt;4 accounts</p>
-  <p style={{fontWeight:'bold' ,color:'rgb(249, 72, 255)'}}><FontAwesomeIcon icon={faSquare} />  4 to 8 accounts</p>
-  <p style={{fontWeight:'bold' ,color:'rgb(50, 54, 255)'}}><FontAwesomeIcon icon={faSquare} />  8 to 12 accounts</p>
+
+  {/* color: item["heading"] === "Less than 4 accounts" ? "rgb(179, 246, 179)" : item["heading"] === "Between 4 to 8 acocunts" ? "rgb(251, 144, 255)" : item["heading"] === "more than 8 accounts" ? "rgb(128, 253, 255)" : "rgb(255, 0, 0)" */}
+
+  <p style={{fontWeight:'bold' ,color: "rgb(179, 246, 179)"}}><FontAwesomeIcon icon={faSquare} />  &lt;4 accounts</p>
+  <p style={{fontWeight:'bold' ,color:'rgb(251, 144, 255)'}}><FontAwesomeIcon icon={faSquare} />  4 to 8 accounts</p>
+  <p style={{fontWeight:'bold' ,color:'rgb(128, 253, 255)'}}><FontAwesomeIcon icon={faSquare} />  8 to 12 accounts</p>
   {/* rgb(225, 238, 46) */}
 </div>
 
@@ -467,7 +470,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
           data: businessarr[0]["totalriskmodel"].map(item => ({
             name: item["Risk_Model.telecomRisk"],
             value: item["value_count"],
-            color: item["Risk_Model.telecomRisk"] === "High" ? "rgb(248, 83, 83)" : item["Risk_Model.telecomRisk"] === "Medium" ? "rgb(248, 248, 67)" : item["Risk_Model.telecomRisk"] === "Low" ? "rgb(80, 247, 80)": null,
+            color: item["Risk_Model.telecomRisk"] === "High" ? "rgb(248, 83, 83)" : item["Risk_Model.telecomRisk"] === "Medium" ? "rgb(255, 255, 121)" : item["Risk_Model.telecomRisk"] === "Low" ? "rgb(80, 247, 80)": null,
             
           })),
           arcLabel: (item) => `${item.value}`,
@@ -493,8 +496,14 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 
 <div className=" flex flex-col  mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
   {/* <p>legend</p> */}
+
+
+  {/* color: item["Risk_Model.telecomRisk"] === "High" ? "rgb(248, 83, 83)" : item["Risk_Model.telecomRisk"] === "Medium" ? "rgb(251, 251, 153)" : item["Risk_Model.telecomRisk"] === "Low" ? "rgb(80, 247, 80)": null, */}
+
+
+
   <p style={{fontWeight:'bold' ,color:"rgb(248, 83, 83)"}}><FontAwesomeIcon icon={faSquare} />  High</p>
-  <p style={{fontWeight:'bold' ,color:'rgb(248, 248, 67)'}}><FontAwesomeIcon icon={faSquare} />  Medium</p>
+  <p style={{fontWeight:'bold' ,color:'rgb(251, 251, 153)'}}><FontAwesomeIcon icon={faSquare} />  Medium</p>
   <p style={{fontWeight:'bold' ,color:'rgb(80, 247, 80)'}}><FontAwesomeIcon icon={faSquare} />  Low</p>
   {/* rgb(225, 238, 46) */}
 </div>
@@ -567,7 +576,8 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
             name: item["GroupName"],
             value: item["Count"],
             
-             color: item["GroupName"] === "less than 365" ? "rgb(0, 255, 0)" : item["GroupName"] === "Between 365 and 800" ? "rgb(249, 72, 255)" : item["GroupName"] === "greater than 800" ? "rgb(50, 54, 255)" : "rgb(255, 0, 0)"
+             color: item["GroupName"] === "less than 365" ? "rgb(179, 246, 179)" : item["GroupName"] === "Between 365 and 800" ? "rgb(251, 144, 255)" : item["GroupName"] === "greater than 800" ? "rgb(128, 253, 255)" : "rgb(255, 0, 0)"
+            //  color: item["heading"] === "Less than 4 accounts" ? "rgb(179, 246, 179)" : item["heading"] === "Between 4 to 8 acocunts" ? "rgb(251, 144, 255)" : item["heading"] === "more than 8 accounts" ? "rgb(128, 253, 255)" : "rgb(255, 0, 0)"
 
           })),
           arcLabel: (item) => `${item.value}`,
@@ -598,9 +608,11 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 <div className=" flex flex-col  mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
   {/* <p>legend</p> */}
   {/* <p style={{color:"rgb(0, 255, 0)"}}> </p> */}
-  <p style={{fontWeight:'bold' ,color: "rgb(0, 255, 0)"}}><FontAwesomeIcon icon={faSquare} />  &lt; 365 days</p>
-  <p style={{fontWeight:'bold' ,color:'rgb(249, 72, 255)'}}><FontAwesomeIcon icon={faSquare} />  365-800 days</p>
-  <p style={{fontWeight:'bold' ,color:'rgb(50, 54, 255)'}}><FontAwesomeIcon icon={faSquare} />  &gt; 800 days</p>
+  {/* //  color: item["heading"] === "Less than 4 accounts" ? "rgb(179, 246, 179)" : item["heading"] === "Between 4 to 8 acocunts" ? "rgb(251, 144, 255)" : item["heading"] === "more than 8 accounts" ? "rgb(128, 253, 255)" : "rgb(255, 0, 0)" */}
+
+  <p style={{fontWeight:'bold' ,color: "rgb(179, 246, 179)"}}><FontAwesomeIcon icon={faSquare} />  &lt; 365 days</p>
+  <p style={{fontWeight:'bold' ,color:'rgb(251, 144, 255)'}}><FontAwesomeIcon icon={faSquare} />  365-800 days</p>
+  <p style={{fontWeight:'bold' ,color:'rgb(128, 253, 255)'}}><FontAwesomeIcon icon={faSquare} />  &gt; 800 days</p>
   {/* rgb(225, 238, 46) */}
 </div>
 
@@ -652,8 +664,8 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
           data: businessarr[0]["prepaidPostpaid"].map(item => ({
             name: item["Phone_Network.numberBillingType"],
             value: item["value_count"],
-            color: item["Phone_Network.numberBillingType"] === "prepaid" ? "rgb(126, 255, 126)":  "rgb(252, 126, 126)"
-            
+            color: item["Phone_Network.numberBillingType"] === "prepaid" ? "rgb(177, 255, 177)":  "rgb(255, 145, 145)"
+
           })),
           arcLabel: (item) => `${item.value}`,
           arcLabelMinAngle: 45,
@@ -679,8 +691,8 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 {/* <div className="bg-slate-100 flex flex-col  mt-4" style={{position:'absolute', right:'230px', width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >  */}
 
   {/* <p>legend</p> */}
-  <p style={{fontWeight:'bold' ,color: "rgb(126, 255, 126)"}}><FontAwesomeIcon icon={faSquare} />Prepaid</p>
-  <p style={{fontWeight:'bold' ,color: "rgb(252, 126, 126)"}}><FontAwesomeIcon icon={faSquare} />Postpaid</p>
+  <p style={{fontWeight:'bold' ,color: "rgb(172, 255, 183)"}}><FontAwesomeIcon icon={faSquare} />Prepaid</p>
+  <p style={{fontWeight:'bold' ,color: "rgb(255, 174, 174)"}}><FontAwesomeIcon icon={faSquare} />Postpaid</p>
 </div>
 </div>
 
@@ -708,8 +720,8 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
           data: businessarr[0]["phonereachable"].map(item => ({
             name: item["Phone_Network.isPhoneReachable"],
             value: item["value_count"],
-            color: item["Phone_Network.isPhoneReachable"] === "TRUE" ? "rgb(126, 255, 126)" : 'rgb(252, 126, 126)',
-            
+            color: item["Phone_Network.isPhoneReachable"] === "TRUE" ? 'rgb(177, 255, 177)' :  "rgb(255, 145, 145)"
+
           })),
           arcLabel: (item) => `${item.value}`,
           arcLabelMinAngle: 45,
@@ -735,8 +747,8 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 
 <div className="  flex flex-col mt-12" style={{position:'absolute', right:'5%', bottom:'30%'}}  >
   {/* <p>legend</p> */}
-  <p style={{fontWeight:'bold' ,color: "rgb(126, 255, 126)"}}><FontAwesomeIcon icon={faSquare} />Reachable</p>
-  <p style={{fontWeight:'bold',color: "rgb(252, 126, 126)"}}><FontAwesomeIcon icon={faSquare} />Unreachable</p>
+  <p style={{fontWeight:'bold' ,color: "rgb(172, 255, 183)"}}><FontAwesomeIcon icon={faSquare} />Reachable</p>
+  <p style={{fontWeight:'bold',color: "rgb(255, 174, 174)"}}><FontAwesomeIcon icon={faSquare} />Unreachable</p>
 
 </div>
 
@@ -785,7 +797,10 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
           data: businessarr[0]["identityConfidenceScore"].map(item => ({
             name: item["Risk_Model.identityConfidence"],
             value: item["value_count"],
-            color: item["Risk_Model.identityConfidence"] === "High" ? "rgb(126, 255, 126)" : item["Risk_Model.identityConfidence"] === "Medium" ? "rgb(248, 248, 67)" : item["Risk_Model.identityConfidence"] === "Low" ? "rgb(248, 83, 83)": null
+            color: item["Risk_Model.identityConfidence"] === "High" ? "rgb(255, 145, 145)" : item["Risk_Model.identityConfidence"] === "Medium" ? "rgb(255, 246, 175)" : item["Risk_Model.identityConfidence"] === "Low" ? "rgb(177, 255, 177)": null
+            // color: item["Risk_Model.telecomRisk"] === "High" ? "rgb(248, 83, 83)" : item["Risk_Model.telecomRisk"] === "Medium" ? "rgb(255, 255, 121)" : item["Risk_Model.telecomRisk"] === "Low" ? "rgb(80, 247, 80)": null,
+
+          
           })),
           arcLabel: (item) => `${item.value}`,
           arcLabelMinAngle: 45,
@@ -816,9 +831,13 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 
 <div className=" flex flex-col  mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
   {/* <p>legend</p> */}
-  <p style={{fontWeight:'bold' ,color:'rgb(80, 247, 80)'}}><FontAwesomeIcon icon={faSquare} />  High</p>
-  <p style={{fontWeight:'bold' ,color:'rgb(248, 248, 67)'}}><FontAwesomeIcon icon={faSquare} />  Medium</p>
-  <p style={{fontWeight:'bold' ,color:'rgb(248, 83, 83)'}}><FontAwesomeIcon icon={faSquare} />  Low</p>
+
+
+  {/* // color: item["Risk_Model.telecomRisk"] === "High" ? "rgb(248, 83, 83)" : item["Risk_Model.telecomRisk"] === "Medium" ? "rgb(255, 255, 121)" : item["Risk_Model.telecomRisk"] === "Low" ? "rgb(80, 247, 80)": null, */}
+
+  <p style={{fontWeight:'bold' ,color:'rgb(255, 145, 145)'}}><FontAwesomeIcon icon={faSquare} />  High</p>
+  <p style={{fontWeight:'bold' ,color:'rgb(255, 246, 175)'}}><FontAwesomeIcon icon={faSquare} />  Medium</p>
+  <p style={{fontWeight:'bold' ,color:'rgb(177, 255, 177)'}}><FontAwesomeIcon icon={faSquare} />  Low</p>
   {/* rgb(225, 238, 46) */}
 
 
@@ -871,7 +890,11 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
             name: item["GroupName"],
             value: item["Count"],
             // color: item["GroupName"] === "greater than 66" ? 'rgb(126, 255, 126)' : "rgb(252, 126, 126)",
-            color: item["GroupName"] === "greater than 66" ? "rgb(126, 255, 126)" : item["GroupName"] === "Between 33 and 66" ? "rgb(248, 248, 67)" : item["GroupName"] === "less than 33" ? "rgb(248, 83, 83)": "rgb(255, 0, 157)" 
+            color: item["GroupName"] === "greater than 66" ? "rgb(255, 145, 145)" : item["GroupName"] === "Between 33 and 66" ? "rgb(255, 246, 175)" : item["GroupName"] === "less than 33" ? "rgb(177, 255, 177)": "rgb(255, 0, 157)" 
+
+
+
+            // color: item["Risk_Model.identityConfidence"] === "High" ? "rgb(255, 145, 145)" : item["Risk_Model.identityConfidence"] === "Medium" ? "rgb(255, 246, 175)" : item["Risk_Model.identityConfidence"] === "Low" ? "rgb(177, 255, 177)": null
 
             
           })),
@@ -898,8 +921,15 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 
 <div className=" flex flex-col mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
   {/* <p>legend</p> */}
-  <p style={{fontWeight:'bold' , color: "rgb(126, 255, 126)"}}><FontAwesomeIcon icon={faSquare} />  greater than 66</p>
-  <p style={{fontWeight:'bold' ,color: "rgb(248, 248, 67)"}}><FontAwesomeIcon icon={faSquare} />  Between 33 and 66</p>
+
+
+  {/* // color: item["Risk_Model.identityConfidence"] === "High" ? "rgb(255, 145, 145)" : item["Risk_Model.identityConfidence"] === "Medium" ? "rgb(255, 246, 175)" : item["Risk_Model.identityConfidence"] === "Low" ? "rgb(177, 255, 177)": null */}
+
+
+
+  
+  <p style={{fontWeight:'bold' , color: "rgb(255, 145, 145)"}}><FontAwesomeIcon icon={faSquare} />  greater than 66</p>
+  <p style={{fontWeight:'bold' ,color: "rgb(255, 246, 175)"}}><FontAwesomeIcon icon={faSquare} />  Between 33 and 66</p>
 
   <p style={{fontWeight:'bold' ,color: "rgb(252, 126, 126)"}}><FontAwesomeIcon icon={faSquare} />  less than 33</p>
   {/* rgb(225, 238, 46) */}
@@ -976,8 +1006,9 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
           data: businessarr[0]["upicount"].map(item => ({
             name: item["upi"],
             value: item["count"],
-            color: item["upi"] === "Yes" ? 'rgb(126, 255, 126)' : "rgb(252, 126, 126)",
-            
+            color: item["upi"] === "Yes" ? 'rgb(255, 145, 145)' : "rgb(177, 255, 177)",
+            // color: item["GroupName"] === "greater than 66" ? "rgb(255, 145, 145)" : item["GroupName"] === "Between 33 and 66" ? "rgb(255, 246, 175)" : item["GroupName"] === "less than 33" ? "rgb(177, 255, 177)": "rgb(255, 0, 157)" 
+
           })),
           arcLabel: (item) => `${item.value}`,
           arcLabelMinAngle: 45,
@@ -1002,9 +1033,14 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 
 <div className="flex flex-col mt-4" style={{width:'100%', fontSize:'14px', whiteSpace: 'nowrap', overflowX: 'auto'}} >
   {/* <p>legend</p> */}
-  <p style={{fontWeight:'bold' ,color: "rgb(126, 255, 126)"}}><FontAwesomeIcon icon={faSquare} />  Has UPI</p>
-  <p style={{fontWeight:'bold' ,color: "rgb(252, 126, 126)"}}><FontAwesomeIcon icon={faSquare} />  No UPI</p>
+  <p style={{fontWeight:'bold' ,color: "rgb(255, 145, 145)"}}><FontAwesomeIcon icon={faSquare} />  Has UPI</p>
+  <p style={{fontWeight:'bold' ,color: "rgb(177, 255, 177)"}}><FontAwesomeIcon icon={faSquare} />  No UPI</p>
+  {/* color: item["upi"] === "Yes" ? 'rgb(255, 145, 145)' : "rgb(177, 255, 177)", */}
 
+
+
+
+  {/* color: item["Risk_Model.identityConfidence"] === "High" ? "rgb(255, 145, 145)" : item["Risk_Model.identityConfidence"] === "Medium" ? "rgb(255, 246, 175)" : item["Risk_Model.identityConfidence"] === "Low" ? "rgb(177, 255, 177)": null */}
 
 
 
@@ -1438,7 +1474,11 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
             name: item["GroupName"],
             value: item["Count"],
             
-             color: item["GroupName"] === "less than 365" ? "rgb(0, 255, 0)" : item["GroupName"] === "Between 365 and 800" ? "rgb(249, 72, 255)" : item["GroupName"] === "greater than 800" ? "rgb(50, 54, 255)" : "rgb(255, 0, 0)"
+             color: item["GroupName"] === "less than 365" ? "rgb(126, 255, 126)" : item["GroupName"] === "Between 365 and 800" ? "rgb(249, 72, 255)" : item["GroupName"] === "greater than 800" ? "rgb(50, 54, 255)" : "rgb(255, 0, 0)"
+
+            //  color: item["heading"] === "Less than 4 accounts" ? "rgb(126, 255, 126)" : item["heading"] === "Between 4 to 8 acocunts" ? "rgb(249, 72, 255)" : item["heading"] === "more than 8 accounts" ? "rgb(50, 54, 255)" : "rgb(255, 0, 0)"
+
+
 
           })),
           arcLabel: (item) => `${item.value}`,
@@ -1510,7 +1550,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
 
 <div className="flex flex-row justify-between">
 
-<p className="whitespace-nowrap" style={{position:'absolute', left:'10px'}}>Reachable/Non-Reachable </p>
+<p className="whitespace-nowrap" style={{position:'absolute', left:'10px'}}>Prepaid/Postpaid </p>
 
 <div className="flex flex-row justify-between">
 
@@ -1523,8 +1563,8 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
           data: businessarr[0]["prepaidPostpaid"].map(item => ({
             name: item["Phone_Network.numberBillingType"],
             value: item["value_count"],
-            color: item["Phone_Network.numberBillingType"] === "prepaid" ? "rgb(126, 255, 126)":  "rgb(252, 126, 126)"
-            
+            color: item["Phone_Network.numberBillingType"] === "prepaid" ? "rgb(255, 145, 145)":  "rgb(177, 255, 177)"
+
           })),
           arcLabel: (item) => `${item.value}`,
           arcLabelMinAngle: 45,
@@ -1580,7 +1620,7 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
             name: item["Phone_Network.isPhoneReachable"],
             value: item["value_count"],
             color: item["Phone_Network.isPhoneReachable"] === "TRUE" ? "rgb(126, 255, 126)" : 'rgb(252, 126, 126)',
-            
+
           })),
           arcLabel: (item) => `${item.value}`,
           arcLabelMinAngle: 45,
@@ -1847,7 +1887,10 @@ data={(businessarr!==null)?(businessarr[0]["totalsocialsites"]):(null)}
           data: businessarr[0]["upicount"].map(item => ({
             name: item["upi"],
             value: item["count"],
-            color: item["upi"] === "Yes" ? 'rgb(126, 255, 126)' : "rgb(252, 126, 126)",
+            color: item["upi"] === "Yes" ? "rgb(126, 255, 126)" : 'rgb(252, 126, 126)',
+
+
+
             
           })),
           arcLabel: (item) => `${item.value}`,
