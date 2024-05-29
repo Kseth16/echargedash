@@ -13,10 +13,13 @@ import { faSquare } from '@fortawesome/free-solid-svg-icons';
 
 
 
-let businessarr=null;
-let dataarr=null;
+// let businessarr=null;
+// let dataarr=null;
 
 function Businessinsight(){
+
+  let businessarr=null;
+let dataarr=null;
 
     
   const[mobileNumber,setMobileNumber]=useState("");
