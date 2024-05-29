@@ -336,7 +336,7 @@ setTempholdingarr(findDataByPhoneNumber(mobileNumber));
             name: item["heading"],
             value: item["amount"],
             
-             color: item["heading"] === "Less than 4 accounts" ? "rgb(179, 246, 179)" : item["heading"] === "Between 4 to 8 acocunts" ? "rgb(251, 144, 255)" : item["heading"] === "more than 8 accounts" ? "rgb(128, 253, 255)" : "rgb(255, 0, 0)"
+             color: item["heading"] === "Less than 4 accounts" ? "rgb(128, 255, 128)" : item["heading"] === "Between 4 to 8 acocunts" ? "rgb(251, 144, 255)" : item["heading"] === "more than 8 accounts" ? "rgb(86, 252, 255)" : "rgb(255, 0, 0)"
 
           })),
           arcLabel: (item) => `${item.value}`,
