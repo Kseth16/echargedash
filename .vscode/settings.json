@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/5c2e9750-1d45-4356-8bf8-97028ffd3c4c/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/echargedash",
+    "appService.deploySubpath": "echargedash1.0"
+}

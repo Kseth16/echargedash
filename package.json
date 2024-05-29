@@ -1,5 +1,22 @@
+
+
 {
+  "name": "echargedash1.0",
+  "version": "1.0.0",
+  "homepage": "https://kseth16.github.io/echargedash/",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "build": "react-scripts build",
+    "start": "react-scripts start",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "ag-charts-react": "^9.3.1"
   }
 }
+
+
+
+
